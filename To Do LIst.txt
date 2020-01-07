@@ -1,0 +1,30 @@
+Autonomous Cannon
+	- Aim()
+		○ Rotation::float
+		○ Angle::float
+	- Position()
+		○ AutomousMove()
+			§ GatherSenorInfo()
+			§ Move()
+	- Shoot()
+		○ Power::float
+		○ Motor
+
+
+Spin
+	- Extend(Motor, Power)
+	- SpinOnce(Motor, Power)
+		○ 
+SpinMultiple(Motor, Power)
+
+Hang inherited from Cannon and Spin
+	- Claw(Motor,Power)
+	- Rectract()
+Grasp()
+
+
+To Do List Task List
+
+ 1. Figure out how to use Viktor Motors
+ 2. Make teloporated move into a function
+ 3. Make a automous move function inherited from the teloperated move function
