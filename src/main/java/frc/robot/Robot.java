@@ -13,9 +13,9 @@ import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Compressor;
-import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.Timer;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 
 
@@ -34,13 +34,13 @@ public class Robot extends TimedRobot { //test!
   double LDTMotor;
   double RDTMotor;
   double scaleFactor;
-  Spark m_LeftFront = new Spark(kMotorPortLeftFront);
-  Spark m_LeftRear = new Spark(kMotorPortLeftRear);
-  Spark m_RightFront = new Spark(kMotorPortRightFront);
-  Spark m_RightRear = new Spark(kMotorPortRightRear); 
+  WPI_VictorSPX m_LeftFront = new WPI_VictorSPX(kMotorPortLeftFront);
+  WPI_VictorSPX m_LeftRear = new WPI_VictorSPX(kMotorPortLeftRear);
+  WPI_VictorSPX m_RightFront = new WPI_VictorSPX(kMotorPortRightFront);
+  WPI_VictorSPX m_RightRear = new WPI_VictorSPX(kMotorPortRightRear); 
   SpeedControllerGroup m_LeftGroup = new SpeedControllerGroup(m_LeftFront, m_LeftRear);
   SpeedControllerGroup m_RightGroup = new SpeedControllerGroup(m_RightFront, m_RightRear);
-  Spark m_Elevator = new Spark(kMotorPortElevator1);
+  WPI_VictorSPX m_Elevator = new WPI_VictorSPX(kMotorPortElevator1);
   DifferentialDrive m_drive = new DifferentialDrive(m_LeftGroup, m_RightGroup);
   double stick1val,stick2val;
   
@@ -142,11 +142,7 @@ public class Robot extends TimedRobot { //test!
     m_RightFront.set(stick2val);
     m_RightRear.set(stick2val);
     
-    if(timer.getMatchTime() > 10.1 && timer.getMatchTime() < 10.9)
-    {
-      frontSol.set(DoubleSolenoid.Value.kReverse);
-      rearSol.set(DoubleSolenoid.Value.kReverse);
-    }  
+
     //System.out.println(timer.getMatchTime());
 
     
