@@ -23,7 +23,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 public class Robot extends TimedRobot { //test!
   public static DifferentialDrive m_myRobot;
-  public XboxController m_controller;
+  public XboxController m_controller; //
 	private static final int kMotorPortLeftFront = 1; //PWM ports
   private static final int kMotorPortLeftRear = 0; 
   private static final int kMotorPortRightFront = 3;
